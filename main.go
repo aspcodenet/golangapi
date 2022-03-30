@@ -25,8 +25,17 @@ func onHandleEmployee(c echo.Context) error {
 	return c.JSON(http.StatusOK, allaEmployees)
 }
 
-func main() {
+type product struct {
+	id    int
+	title string
+}
 
+func main() {
+	// response, _ := http.Get("https://fakestoreapi.com/products")
+
+	// fmt.Printf("response: %v\n", response)
+	// body, readErr := ioutil.ReadAll(response.Body)
+	// -> JSON
 	e := echo.New()
 
 	e.GET("/api/employee", onHandleEmployee)
